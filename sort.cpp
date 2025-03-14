@@ -107,14 +107,14 @@ void MERGE(vector<int> &A, int p, int q, int r)
             j++;
         }
     }
-    // cout<<"¹é²¢ºó½á¹û"<<endl;
+    // cout<<"å½’å¹¶åç»“æœ"<<endl;
     // for(int i=p;i<=r;i++){
     //         cout << A[i] << " ";
     // }
 }
 void MERGE_SORT(vector<int> &arr, int p, int r)
 {
-    // cout<<"µ±Ç°½øĞĞ¹é²¢ÅÅĞòµÄÊı×é"<<endl;
+    // cout<<"å½“å‰è¿›è¡Œå½’å¹¶æ’åºçš„æ•°ç»„"<<endl;
     // for (int i = p; i <= r; i++)
     // {
     //     cout << arr[i] << " ";
@@ -134,7 +134,7 @@ void mergeSort(vector<int> &arr)
 }
 int PARTITION(vector<int> &arr, int left, int right)
 {
-    // ÕâÀïÑ¡È¡µÚÒ»¸öÊı×÷Îªpivot
+    // è¿™é‡Œé€‰å–ç¬¬ä¸€ä¸ªæ•°ä½œä¸ºpivot
     int pivot = arr[left];
     arr[left] = -1;
     int low = left, high = right;
@@ -184,7 +184,7 @@ void quickSort(vector<int> &arr)
     QUICKSORT(arr, 0, arr.size() - 1);
 }
 void heapify(vector<int> &arr, int n, int i)
-{ // iµ±Ç°½Úµã£¬n Ê÷¹æÄ£
+{ // iå½“å‰èŠ‚ç‚¹ï¼Œn æ ‘è§„æ¨¡
     int largest = i;
     int left = 2 * i + 1;
     int right = 2 * i + 2;
@@ -238,7 +238,7 @@ void radixSort(vector<int> &arr)
     }
 }
 void bucketSort(vector<int> &arr)
-{ // Í°ÄÚ²åÈëÅÅĞò
+{ // æ¡¶å†…æ’å…¥æ’åº
     if (arr.empty())
         return;
     int minVal = 1;
@@ -273,11 +273,11 @@ void sortAndMeasureTime(const string name, functionName func, vector<int> arr)
     chrono::duration<double, std::milli> elapsed = end - start;
     if (isSorted(arr))
     {
-        cout << name << "ÅÅĞòÍê³É£¬ÓÃÊ±" << elapsed.count() << "ms" << endl;
+        cout << name << "æ’åºå®Œæˆï¼Œç”¨æ—¶" << elapsed.count() << "ms" << endl;
     }
     else
     {
-        cout << name << "ÅÅĞòÊ§°Ü£¡" << endl;
+        cout << name << "æ’åºå¤±è´¥ï¼" << endl;
     }
 }
 void sortAndMeasureTime1(const string name, functionName func, vector<int> &arr)
@@ -288,88 +288,88 @@ void sortAndMeasureTime1(const string name, functionName func, vector<int> &arr)
     chrono::duration<double, std::milli> elapsed = end - start;
     if (isSorted(arr))
     {
-        cout << name << "ÅÅĞòÍê³É£¬ÓÃÊ±" << elapsed.count() << "ms" << endl;
+        cout << name << "æ’åºå®Œæˆï¼Œç”¨æ—¶" << elapsed.count() << "ms" << endl;
     }
     else
     {
-        cout << name << "ÅÅĞòÊ§°Ü£¡" << endl;
+        cout << name << "æ’åºå¤±è´¥ï¼" << endl;
     }
 }
 int main()
-{ cout<<"(1) Ëæ»úÉú³ÉÒ»¸ö°üÀ¨n¸öÕûÊıµÄÊı×é£¨ÔªËØÈ¡Öµ·¶Î§ÊÇ1~1000£©£¬ÀûÓÃ²åÈëÅÅĞò¡¢¹é²¢ÅÅĞò¡¢¿ìËÙÅÅĞò¡¢¶ÑÅÅĞò¡¢»ùÊıÅÅĞò¡¢Í°ÅÅĞòµÈËã·¨¶ÔÊı×é½øĞĞ·Ç½µĞòÅÅĞò£¬¼ÇÂ¼²»Í¬Ëã·¨µÄÔËĞĞÊ±¼ä¡£"<<endl;
+{ cout<<"(1) éšæœºç”Ÿæˆä¸€ä¸ªåŒ…æ‹¬nä¸ªæ•´æ•°çš„æ•°ç»„ï¼ˆå…ƒç´ å–å€¼èŒƒå›´æ˜¯1~1000ï¼‰ï¼Œåˆ©ç”¨æ’å…¥æ’åºã€å½’å¹¶æ’åºã€å¿«é€Ÿæ’åºã€å †æ’åºã€åŸºæ•°æ’åºã€æ¡¶æ’åºç­‰ç®—æ³•å¯¹æ•°ç»„è¿›è¡Œéé™åºæ’åºï¼Œè®°å½•ä¸åŒç®—æ³•çš„è¿è¡Œæ—¶é—´ã€‚"<<endl;
     srand((unsigned)time(0));
     int n;
-    cout << "ÊäÈëÊı×é¹æÄ£" << endl;
+    cout << "è¾“å…¥æ•°ç»„è§„æ¨¡" << endl;
     cin >> n;
     vector<int> arr = randomNum(n);
     // displayFirst50(arr);
-    sortAndMeasureTime("²åÈëÅÅĞò", insertSort, arr);
+    sortAndMeasureTime("æ’å…¥æ’åº", insertSort, arr);
     // displayFirst50(arr);
-    sortAndMeasureTime("¹é²¢ÅÅĞò", mergeSort, arr);
-    sortAndMeasureTime("¿ìËÙÅÅĞò", quickSort, arr);
-    sortAndMeasureTime("¶ÑÅÅĞò", heapSort, arr);
-    sortAndMeasureTime("»ùÊıÅÅĞò", radixSort, arr);
-    sortAndMeasureTime("Í°ÅÅĞò", bucketSort, arr);
-    cout<<"(2) ¸Ä±äÊı×é¹æÄ£n= 5Íò¡¢10Íò¡¢20Íò¡¢30Íò¡¢50Íò£¬¼ÇÂ¼²»Í¬¹æÄ£ÏÂ¸÷¸öËã·¨µÄÅÅĞòÊ±¼ä¡£"<<endl;
+    sortAndMeasureTime("å½’å¹¶æ’åº", mergeSort, arr);
+    sortAndMeasureTime("å¿«é€Ÿæ’åº", quickSort, arr);
+    sortAndMeasureTime("å †æ’åº", heapSort, arr);
+    sortAndMeasureTime("åŸºæ•°æ’åº", radixSort, arr);
+    sortAndMeasureTime("æ¡¶æ’åº", bucketSort, arr);
+    cout<<"(2) æ”¹å˜æ•°ç»„è§„æ¨¡n= 5ä¸‡ã€10ä¸‡ã€20ä¸‡ã€30ä¸‡ã€50ä¸‡ï¼Œè®°å½•ä¸åŒè§„æ¨¡ä¸‹å„ä¸ªç®—æ³•çš„æ’åºæ—¶é—´ã€‚"<<endl;
     arr.clear();
     arr = randomNum(50000);
-    cout << "5Íò£º" << endl;
-    sortAndMeasureTime("²åÈëÅÅĞò", insertSort, arr);
-    sortAndMeasureTime("¹é²¢ÅÅĞò", mergeSort, arr);
-    sortAndMeasureTime("¿ìËÙÅÅĞò", quickSort, arr);
-    sortAndMeasureTime("¶ÑÅÅĞò", heapSort, arr);
-    sortAndMeasureTime("»ùÊıÅÅĞò", radixSort, arr);
-    sortAndMeasureTime("Í°ÅÅĞò", bucketSort, arr);
+    cout << "5ä¸‡ï¼š" << endl;
+    sortAndMeasureTime("æ’å…¥æ’åº", insertSort, arr);
+    sortAndMeasureTime("å½’å¹¶æ’åº", mergeSort, arr);
+    sortAndMeasureTime("å¿«é€Ÿæ’åº", quickSort, arr);
+    sortAndMeasureTime("å †æ’åº", heapSort, arr);
+    sortAndMeasureTime("åŸºæ•°æ’åº", radixSort, arr);
+    sortAndMeasureTime("æ¡¶æ’åº", bucketSort, arr);
     arr.clear();
     arr = randomNum(100000);
-    cout << "10Íò£º" << endl;
-    sortAndMeasureTime("²åÈëÅÅĞò", insertSort, arr);
-    sortAndMeasureTime("¹é²¢ÅÅĞò", mergeSort, arr);
-    sortAndMeasureTime("¿ìËÙÅÅĞò", quickSort, arr);
-    sortAndMeasureTime("¶ÑÅÅĞò", heapSort, arr);
-    sortAndMeasureTime("»ùÊıÅÅĞò", radixSort, arr);
-    sortAndMeasureTime("Í°ÅÅĞò", bucketSort, arr);
+    cout << "10ä¸‡ï¼š" << endl;
+    sortAndMeasureTime("æ’å…¥æ’åº", insertSort, arr);
+    sortAndMeasureTime("å½’å¹¶æ’åº", mergeSort, arr);
+    sortAndMeasureTime("å¿«é€Ÿæ’åº", quickSort, arr);
+    sortAndMeasureTime("å †æ’åº", heapSort, arr);
+    sortAndMeasureTime("åŸºæ•°æ’åº", radixSort, arr);
+    sortAndMeasureTime("æ¡¶æ’åº", bucketSort, arr);
     arr.clear();
     arr = randomNum(200000);
-    cout << "20Íò£º" << endl;
-    sortAndMeasureTime("²åÈëÅÅĞò", insertSort, arr);
-    sortAndMeasureTime("¹é²¢ÅÅĞò", mergeSort, arr);
-    sortAndMeasureTime("¿ìËÙÅÅĞò", quickSort, arr);
-    sortAndMeasureTime("¶ÑÅÅĞò", heapSort, arr);
-    sortAndMeasureTime("»ùÊıÅÅĞò", radixSort, arr);
-    sortAndMeasureTime("Í°ÅÅĞò", bucketSort, arr);
+    cout << "20ä¸‡ï¼š" << endl;
+    sortAndMeasureTime("æ’å…¥æ’åº", insertSort, arr);
+    sortAndMeasureTime("å½’å¹¶æ’åº", mergeSort, arr);
+    sortAndMeasureTime("å¿«é€Ÿæ’åº", quickSort, arr);
+    sortAndMeasureTime("å †æ’åº", heapSort, arr);
+    sortAndMeasureTime("åŸºæ•°æ’åº", radixSort, arr);
+    sortAndMeasureTime("æ¡¶æ’åº", bucketSort, arr);
     arr.clear();
     arr = randomNum(300000);
-    cout << "30Íò£º" << endl;
-    sortAndMeasureTime("²åÈëÅÅĞò", insertSort, arr);
-    sortAndMeasureTime("¹é²¢ÅÅĞò", mergeSort, arr);
-    sortAndMeasureTime("¿ìËÙÅÅĞò", quickSort, arr);
-    sortAndMeasureTime("¶ÑÅÅĞò", heapSort, arr);
-    sortAndMeasureTime("»ùÊıÅÅĞò", radixSort, arr);
-    sortAndMeasureTime("Í°ÅÅĞò", bucketSort, arr);
+    cout << "30ä¸‡ï¼š" << endl;
+    sortAndMeasureTime("æ’å…¥æ’åº", insertSort, arr);
+    sortAndMeasureTime("å½’å¹¶æ’åº", mergeSort, arr);
+    sortAndMeasureTime("å¿«é€Ÿæ’åº", quickSort, arr);
+    sortAndMeasureTime("å †æ’åº", heapSort, arr);
+    sortAndMeasureTime("åŸºæ•°æ’åº", radixSort, arr);
+    sortAndMeasureTime("æ¡¶æ’åº", bucketSort, arr);
     arr.clear();
     arr = randomNum(500000);
-    cout << "50Íò£º" << endl;
-    sortAndMeasureTime("²åÈëÅÅĞò", insertSort, arr);
-    sortAndMeasureTime("¹é²¢ÅÅĞò", mergeSort, arr);
-    sortAndMeasureTime("¿ìËÙÅÅĞò", quickSort, arr);
-    sortAndMeasureTime("¶ÑÅÅĞò", heapSort, arr);
-    sortAndMeasureTime("»ùÊıÅÅĞò", radixSort, arr);
-    sortAndMeasureTime("Í°ÅÅĞò", bucketSort, arr);
-    cout<<"(3) ¶Ô¹Ì¶¨¹æÄ£ £¨n = 10Íò£©µÄÊı×é½øĞĞËæ»úÈÅÂÒ£¬¶ÔÈÅÂÒºóµÄÊı×é½øĞĞÅÅĞò²¢¼ÇÂ¼¸÷¸öËã·¨µÄÅÅĞòÊ±¼ä¡£±¾ÊµÑéÒªÇóÖØ¸´5´Î£¬¹Û²ìÊäÈëÊı¾İ·Ö²¼ºÍÔËĞĞÊ±¼äµÄ¹ØÏµ¡£"<<endl;
+    cout << "50ä¸‡ï¼š" << endl;
+    sortAndMeasureTime("æ’å…¥æ’åº", insertSort, arr);
+    sortAndMeasureTime("å½’å¹¶æ’åº", mergeSort, arr);
+    sortAndMeasureTime("å¿«é€Ÿæ’åº", quickSort, arr);
+    sortAndMeasureTime("å †æ’åº", heapSort, arr);
+    sortAndMeasureTime("åŸºæ•°æ’åº", radixSort, arr);
+    sortAndMeasureTime("æ¡¶æ’åº", bucketSort, arr);
+    cout<<"(3) å¯¹å›ºå®šè§„æ¨¡ ï¼ˆn = 10ä¸‡ï¼‰çš„æ•°ç»„è¿›è¡Œéšæœºæ‰°ä¹±ï¼Œå¯¹æ‰°ä¹±åçš„æ•°ç»„è¿›è¡Œæ’åºå¹¶è®°å½•å„ä¸ªç®—æ³•çš„æ’åºæ—¶é—´ã€‚æœ¬å®éªŒè¦æ±‚é‡å¤5æ¬¡ï¼Œè§‚å¯Ÿè¾“å…¥æ•°æ®åˆ†å¸ƒå’Œè¿è¡Œæ—¶é—´çš„å…³ç³»ã€‚"<<endl;
     arr.clear();
     n = 100000;
     arr = randomNum(n);
     for (int i = 0; i < 5; i++)
     {
-        cout << "Ëæ»úÈÅÂÒ" << i+1 << endl;
+        cout << "éšæœºæ‰°ä¹±" << i+1 << endl;
         random_shuffle(arr.begin(), arr.end());
-        sortAndMeasureTime1("²åÈëÅÅĞò", insertSort, arr);
-        sortAndMeasureTime1("¹é²¢ÅÅĞò", mergeSort, arr);
-        sortAndMeasureTime1("¿ìËÙÅÅĞò", quickSort, arr);
-        sortAndMeasureTime1("¶ÑÅÅĞò", heapSort, arr);
-        sortAndMeasureTime1("»ùÊıÅÅĞò", radixSort, arr);
-        sortAndMeasureTime1("Í°ÅÅĞò", bucketSort, arr);
+        sortAndMeasureTime1("æ’å…¥æ’åº", insertSort, arr);
+        sortAndMeasureTime1("å½’å¹¶æ’åº", mergeSort, arr);
+        sortAndMeasureTime1("å¿«é€Ÿæ’åº", quickSort, arr);
+        sortAndMeasureTime1("å †æ’åº", heapSort, arr);
+        sortAndMeasureTime1("åŸºæ•°æ’åº", radixSort, arr);
+        sortAndMeasureTime1("æ¡¶æ’åº", bucketSort, arr);
     }
     system("pause");
     return 0;
