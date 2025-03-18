@@ -358,6 +358,7 @@ int main()
         sortAndMeasureTime("基数排序", radixSort, arr);
         sortAndMeasureTime("桶排序", bucketSort, arr);
     }
+    cout<<endl;
     system("pause");
     return 0;
 }
