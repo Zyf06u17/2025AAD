@@ -1,0 +1,9 @@
+// Red Black Tree
+digraph {
+	node [shape=circle style=filled]
+	26525456 [label=83817 fillcolor=black fontcolor=white]
+	nil_l_26525456 [label=NIL fillcolor=black fontcolor=white height=0.3 shape=square width=0.3]
+	26525456 -> nil_l_26525456 [label=L]
+	nil_r_26525456 [label=NIL fillcolor=black fontcolor=white height=0.3 shape=square width=0.3]
+	26525456 -> nil_r_26525456 [label=R]
+}
